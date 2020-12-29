@@ -101,7 +101,7 @@ String dartObjectToString(DartObject v) {
     // Find the index of the enum, then find the member.
     for (var field in type.element.fields) {
       if (field.isEnumConstant && field.isStatic) {
-        var value = type.element.getField(field.name).constantValue;
+        var value = type.element.getField(field.name);
         if (value == v) {
           return '${type.name}.${field.name}';
         }
